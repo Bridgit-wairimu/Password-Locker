@@ -70,7 +70,7 @@ class Credential:
         """
         _init_ a method that helps to define properties for our objects.
         """
-        self.Gmail = Account
+        self.Account = Account
         self.username = username
         self.password = password
 

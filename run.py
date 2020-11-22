@@ -108,7 +108,7 @@ while True:
             print ('\n')
 
 
-                    elif short_code == 'du':
+        elif short_code == 'du':
 
                             if display_user():
                                     print("Here is a list of all your users")
@@ -123,7 +123,7 @@ while True:
                                     print("You dont seem to have any users saved yet")
                                     print('\n')
 
-                    elif short_code == 'fu':
+        elif short_code == 'fu':
 
                             print("Enter the username you want to search for")
 
@@ -137,20 +137,19 @@ while True:
                             else:
                                     print("That user does not exist")
 
-                    elif short_code == "ex":
-                            print("Bye .......")
-                            break
-                    else:
-                            print("I really didn't get that. Please use the short codes")
+        elif short_code == "ex":
+                print("Bye .......")
+                break
+        else:
+                print("I really didn't get that. Please use the short codes")
 
-                            save_credential(create_credential(account,username,password)) # create and save new user.
+        save_credential(create_credential(account,username,password)) # create and save new user.
 
-            print ('\n')
-            print(f"New Credential {account} {username} created")
-            print ('\n')
+        print ('\n')
+        print(f"New Credential {account} {username} created")
+        print ('\n')
 
-
-                    elif short_code == 'dc':
+        elif short_code == 'dc':
 
                             if display_credential():
                                     print("Here is a list of all your credential")
@@ -165,7 +164,7 @@ while True:
                                     print("You dont seem to have any credential saved yet")
                                     print('\n')
 
-                    elif short_code == 'fc':
+        elif short_code == 'fc':
 
                             print("Enter the username you want to search for")
 
@@ -179,7 +178,7 @@ while True:
                             else:
                                     print("That credential does not exist")
 
-                    elif short_code == "ex":
+        elif short_code == "ex":
                             print("Bye .......")
                             break
                     else:
