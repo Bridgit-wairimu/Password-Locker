@@ -79,8 +79,5 @@ class TestPassword(unittest.TestCase):
             """
             self.assertEqual(User.display_user(),User.user_list)
 
-
-
-        
     if __name__ == '__main__':
         unittest.main()
