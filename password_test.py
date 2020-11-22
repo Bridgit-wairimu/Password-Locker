@@ -1,7 +1,6 @@
 import unittest
 from password import User
 
-
 class TestPassword(unittest.TestCase):
 
     def setUp(self):
@@ -80,7 +79,7 @@ class TestPassword(unittest.TestCase):
             """
             self.assertEqual(User.display_user(),User.user_list)
 
-    
+
 
         
     if __name__ == '__main__':
