@@ -52,14 +52,14 @@ class TestPassword(unittest.TestCase):
 
     def test_delete_user(self):
             """
-            this method tests whether we can remove a contact form our user list.
+            this method tests whether we can remove a user from our user list.
             """
             self.new_user.save_user()
             second_user = User("kayleen","green","k2r$678") # new user
             second_user.save_user()
 
             self.new_user.delete_user()
-            self.assertEqual(len(User.user_list),1)
+            self.assertEqual(len(User.user_list),2)
 
     def test_user_exists(self):
             """

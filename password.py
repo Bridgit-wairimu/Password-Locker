@@ -53,7 +53,7 @@ class User:
     @classmethod
     def display_user(cls):
         """
-        this method returns the contact list
+        this method returns the user list
         """
         return cls.user_list
 

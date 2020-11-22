@@ -29,3 +29,34 @@ class Credential:
         for credential in cls.credential_list:
             if credential.username == username:
                 return credential
+
+
+    def delete_credential(self):
+        """
+        this method deletes a credential from the credentila_list
+        """
+        Credential.credential_list.remove(self)
+
+
+    @classmethod 
+    def credential_exists(cls,username):
+        """
+        this method checks if a credential exists fro the credential_list
+        """
+        for credential in cls.credential_list:
+            if credential.username == username:
+                return True
+
+        return False 
+
+
+    @classmethod
+    def display_credential(cls):
+        """
+        this method returns the credential  list
+        """
+        return cls.credential_list
+
+
+
+        
