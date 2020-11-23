@@ -16,7 +16,7 @@
 #### . open the terminal of you computer( Ctrl+Alt+T)
 #### .git clone (https://github.com/Bridgit-wairimu/Password-Locker)
 #### . cd Password_Locker
-#### . then code in atom or any text editor you want.
+#### . then code in atom or any text editor you may prefer.
 
 # Running the app
 
