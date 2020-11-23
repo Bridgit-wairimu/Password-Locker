@@ -66,11 +66,11 @@ def display_credential():
     return credential.display_credential()
 
 
-def generate_Password():
+def generate_password():
     '''
     generates a random password for the user.
     '''
-    auto_password=Credential.generatePassword()
+    auto_password=credential.generatepassword()
     return auto_password
       
 
@@ -84,12 +84,12 @@ def main():
 
         while True:
             print(" TP - To type your own pasword:\n GP - To generate random Password")
-            password_Type = input().lower().strip()
-            if password_Type== 'tp':
+            password_Choice = input().lower()
+            if password_Choice== 'tp':
                 password = input("Enter Password\n")
                 break
-            elif password_Type == 'gp':
-                password = generate_Password()
+            elif password_Choice == 'gp':
+                password = generate_password()
                 break
             else:
                 print("Invalid password please try again")
@@ -117,7 +117,7 @@ def main():
                     password = input("Enter Your Own Password\n")
                     break
                 elif password_Choice == 'gp':
-                    password = generate_Password()
+                    password = generate_password()
                     break
                 else:
                     print("Invalid password please try again")
@@ -130,7 +130,7 @@ def main():
 
         elif short_code == "dc":
             if display_credential():
-                print("Here's your list of acoounts: ")
+                print("Here's your list of accounts: ")
                  
                 print('*' * 30)
                 print('_'* 30)
@@ -170,7 +170,7 @@ def main():
 
         elif short_code == 'gp':
 
-            password = generate_Password()
+            password = generate_password()
             print(f" {password} Has been generated succesfull. You can proceed ")
         elif short_code == 'ex':
             print("Thanks for using passlocker have a nice day")
