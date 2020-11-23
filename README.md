@@ -52,7 +52,7 @@
  #### dc - displays credential
  #### fc - finds credential
  #### gp -generate a new password
- #### d - deletes a 
+ #### d - deletes a credential
  #### ex - exits the pp
 
  # Technologies used
