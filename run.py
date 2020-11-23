@@ -59,6 +59,12 @@ def find_credential_by_username(username):
     """
     return credential.find_credential_by_username(username)
 
+def display_all_credential():
+    """
+    function that finds a credential
+    """
+    return credential.display_all_credential    
+
 def credential_exists(account):
     """
     Function that check if a Credentials exists with that account name and return true or false
@@ -68,9 +74,9 @@ def credential_exists(account):
 
 def generate_password():
     '''
-    generates a random password for the user.
+    generates a password for the user.
     '''
-    auto_password=credential.generatepassword()
+    auto_password=credential.generate_password()
     return auto_password
       
 
@@ -173,7 +179,7 @@ def main():
             password = generate_password()
             print(f" {password} Has been generated succesfull. You can proceed ")
         elif short_code == 'ex':
-            print("Thanks for using passlocker have a nice day")
+            print("Thanks for using passwordlocker have a nice day")
             break
         else:
             print("Wrong entry... Check your entry again and let it match those in the menu")
