@@ -121,30 +121,8 @@ def main():
                     break
                 else:
                     print("Invalid password please try again")
-                elif shortcode == 'du':
-                    if display_user():
-                        print("Here is a list of all your users")
-                        for user in display_user():
-                            print(f"{user.first_name} {user.lastname} .. {user.password}")
-                            print('/n')
-                else:
-                    print('/n')
-                    print("you don't have any user stored yet")
-                    print('/n')
-                else short_code == 'fu'
-                print("enter the username you want to search for")
-                 search_username = input()
-                 if check_existing_user(search_username)
-                    search_user = find_user(search_username)
-                    print(f"{search_user.fisrt_name} {search_user.last_name}")
-                    print('_' * 20)
 
-                    print(f"password....{search_user.password}")
-
-                else:
-                    print("that user does not exist")    
-
-
+        
             save_credential(create_new_credential(account,username,password))
             print('\n')
             print(f"Account Credential for: {account} - username: {username} - password:{password} created succesfully")
