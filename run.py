@@ -47,23 +47,23 @@ def save_credential(credential):
 
     credential.save_credential()
 
-def del_credential(credential):
+def delete_credential(credential):
     """
     function to delete a credential
     """
-    credential.credential_user()
+    credential.delete_credential()
 
-def find_credential(username):
+def find_credential_by_username(username):
     """
     function that finds a user by password and returns the credential
     """
     return credential.find_credential_by_username(username)
 
-def display_credential():
+def credential_exists(account):
     """
-    function to display credential
+    Function that check if a Credentials exists with that account name and return true or false
     """
-    return credential.display_credential()
+    return Credential.if_credential_exists(account)
 
 
 def generate_password():
@@ -94,10 +94,10 @@ def main():
             else:
                 print("Invalid password please try again")
 
-        save_user(create_new_user(fname,lname,password))
-        print("*"*85)
-        print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
-        print("*"*85)
+        save_user(create_new_user(first_name,last_name,password))
+        print("*"*10)
+        print(f"Hello {first_name} {last_name}, Your account has been created succesfully! Your password is: {password}")
+        print("*"*10)
 
     while True:
         print("Use these short codes:\n cc - Create a new credential \n dc - Display Credentials \n  - Find a credential \n gp - Generate A randomn password \n d - Delete credential \n ex- Exit the application \n")
@@ -123,19 +123,19 @@ def main():
                     print("Invalid password please try again")
 
         
-            save_credential(create_new_credential(account,username,password))
+            save_credential(create_new_credential(Account,username,password))
             print('\n')
-            print(f"Account Credential for: {account} - username: {username} - password:{password} created succesfully")
+            print(f"Account Credential for: {Account} - username: {username} - password:{password} created succesfully")
             print('\n')
 
         elif short_code == "dc":
-            if display_credential():
+            if display_all_credential():
                 print("Here's your list of accounts: ")
                  
                 print('*' * 30)
                 print('_'* 30)
-                for account in display_credential():
-                    print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
+                for account in display_all_credential():
+                    print(f" Account:{Account.Account} \n User Name:{username}\n Password:{password}")
                     print('_'* 30)
                 print('*' * 30)
             else:
@@ -144,11 +144,11 @@ def main():
         elif short_code == "fc":
             print("Enter the account name you want to search for")
             search_name = input().lower()
-            if find_credential(search_name):
-                search_credential = find_credential(search_name)
-                print(f"account Name : {search_credential.Account}")
+            if find_credential_by_username(search_name):
+                search_credential = find_credential_by_username(search_name)
+                print(f"account name : {search_credential.Account}")
                 print('-' * 50)
-                print(f"user Name: {search_credential.username} Password :{search_credential.password}")
+                print(f"user name: {search_credential.username} Password :{search_credential.password}")
                 print('-' * 50)
 
             else:
@@ -158,12 +158,12 @@ def main():
         elif short_code == "d":
             print("Enter the account name of the Credential you want to delete")
             search_name = input().lower()
-            if find_credential(search_name):
-                search_credential = find_credential(search_name)
+            if find_credential_by_username(search_name):
+                search_credential = find_credential_by_username(search_name)
                 print("_"*50)
                 search_credential.delete_credential()
                 print('\n')
-                print(f"Your stored credentials for : {search_credential.account} successfully deleted!!!")
+                print(f"Your stored credentials for : {search_credential.Account} successfully deleted!!!")
                 print('\n')
             else:
                 print("That Credential you want to delete does not exist in your store yet")
