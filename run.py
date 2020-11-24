@@ -32,6 +32,8 @@ def display_user():
     """
     return user.display_user()
 
+
+
 def create_new_credential(Account,username,password):
     """
     function that creates new credential for a given user account
@@ -53,17 +55,17 @@ def delete_credential(credential):
     """
     credential.delete_credential()
 
-def find_credential_by_username(username):
+def find_credential(username):
     """
     function that finds a user by password and returns the credential
     """
-    return credential.find_credential_by_username(username)
+    return Credential.find_credential(username)
 
-def display_all_credential():
+def display_credential():
     """
     function that finds a credential
     """
-    return credential.display_all_credential    
+    return Credential.display_credential()    
 
 def credential_exists(account):
     """
@@ -135,12 +137,12 @@ def main():
             print('\n')
 
         elif short_code == "dc":
-            if display_all_credential():
+            if display_credential():
                 print("Here's your list of accounts: ")
                  
                 print('*' * 30)
                 print('_'* 30)
-                for account in display_all_credential():
+                for account in display_credential():
                     print(f" Account:{Account.Account} \n User Name:{username}\n Password:{password}")
                     print('_'* 30)
                 print('*' * 30)
@@ -150,8 +152,8 @@ def main():
         elif short_code == "fc":
             print("Enter the account name you want to search for")
             search_name = input().lower()
-            if find_credential_by_username(search_name):
-                search_credential = find_credential_by_username(search_name)
+            if find_credential(search_name):
+                search_credential = find_credential(search_name)
                 print(f"account name : {search_credential.Account}")
                 print('-' * 50)
                 print(f"user name: {search_credential.username} Password :{search_credential.password}")
@@ -164,8 +166,8 @@ def main():
         elif short_code == "d":
             print("Enter the account name of the Credential you want to delete")
             search_name = input().lower()
-            if find_credential_by_username(search_name):
-                search_credential = find_credential_by_username(search_name)
+            if find_credential(search_name):
+                search_credential = find_credential(search_name)
                 print("_"*50)
                 search_credential.delete_credential()
                 print('\n')
